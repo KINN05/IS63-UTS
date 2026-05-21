@@ -80,7 +80,10 @@
         <h6 class="m-0 font-weight-bold text-primary">
             <i class="fas fa-user-graduate mr-2"></i>Siswa Terbaru
         </h6>
-        <a href="{{ route('siswa.index') }}" class="btn btn-sm btn-primary">
+        {{-- <a href="{{ route('siswa.index') }}" class="btn btn-sm btn-primary">
+        Lihat Semua
+        </a> --}}
+        <a href="#" class="btn btn-sm btn-primary">
             Lihat Semua
         </a>
     </div>
