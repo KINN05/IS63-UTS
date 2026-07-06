@@ -1,16 +1,22 @@
 <?php
+// routes/web.php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\NilaiController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Dashboard (sementara, tanpa middleware auth — akan ditambah di Bab 7)
+// ─── Dashboard ───────────────────────────────────────────────
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-// Route untuk modul lain akan ditambahkan di Bab 5
-// Route::resource('kelas', KelasController::class);
-// Route::resource('siswa', SiswaController::class);
-// Route::resource('nilai', NilaiController::class);
+// ─── Modul Kelas ─────────────────────────────────────────────
+// Menghasilkan 7 route: kelas.index, kelas.create, kelas.store,
+//                       kelas.show, kelas.edit, kelas.update, kelas.destroy
+Route::resource('kelas', KelasController::class);
+
+// ─── Modul Siswa ─────────────────────────────────────────────
+Route::resource('siswa', SiswaController::class);
+
+// ─── Modul Nilai ─────────────────────────────────────────────
+Route::resource('nilai', NilaiController::class);
