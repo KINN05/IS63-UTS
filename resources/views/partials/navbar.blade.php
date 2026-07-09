@@ -45,17 +45,22 @@
                 </button>
             </div>
             <div class="modal-body">
-                Apakah Anda yakin ingin keluar dari sistem SIMSIS?
+                Apakah Anda yakin ingin keluar dari sistem SIMS?
             </div>
-            {{-- <div class="modal-footer">
+            <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
                 <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="btn btn-primary">
-                <i class="fas fa-sign-out-alt mr-1"></i> Logout
-            </button>
-            </form>
-        </div> --}}
+                    @csrf
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+{{-- Pastikan nama user tampil di dropdown --}}
+<span class="mr-2 d-none d-lg-inline text-gray-600 small">
+    {{ Auth::user()->name }}
+</span>
