@@ -33,7 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Modul Kelas — 7 route: kelas.index s/d kelas.destroy
-    Route::resource('kelas', KelasController::class);
+    Route::resource('kelas', KelasController::class)->parameters([
+        'kelas' => 'kelas'
+    ]);
 
     // Modul Siswa — 7 route: siswa.index s/d siswa.destroy
     Route::resource('siswa', SiswaController::class);
