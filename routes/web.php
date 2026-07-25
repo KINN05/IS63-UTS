@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\ProfilController;
 
 // ============================================================
 // ROUTE TAMU (Guest)
@@ -25,6 +26,11 @@ Route::middleware('guest')->group(function () {
 // Jika belum login, otomatis redirect ke /login.
 // ============================================================
 Route::middleware('auth')->group(function () {
+
+    // Modul Profil
+    Route::get('/profil',          [ProfilController::class, 'edit'])->name('profil.edit');
+    Route::put('/profil',          [ProfilController::class, 'update'])->name('profil.update');
+    Route::put('/profil/password', [ProfilController::class, 'updatePassword'])->name('profil.password');
 
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
